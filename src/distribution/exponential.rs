@@ -26,8 +26,7 @@ impl Distribution for ExponentialDistribution {
     fn cdf(&self, x: f64) -> f64 {
         if x >= 0f64 {
             1f64 - (-self.lambda * x).exp()
-        }
-        else {
+        } else {
             0f64
         }
     }
@@ -35,8 +34,7 @@ impl Distribution for ExponentialDistribution {
     fn pdf(&self, x: f64) -> f64 {
         if x >= 0f64 {
             self.lambda * (-self.lambda * x).exp()
-        }
-        else {
+        } else {
             0f64
         }
     }
@@ -73,6 +71,6 @@ mod tests {
         assert_close!(expo_dist.stdev(), 10f64);
         assert_close!(expo_dist.pdf(0f64), 0.1f64);
         assert_close!(expo_dist.pdf(1f64), 0.090_483_742f64);
-        assert_close!(expo_dist.pdf(-1f64), 0f64)
+        assert_close!(expo_dist.pdf(-1f64), 0f64);
     }
 }
