@@ -1,3 +1,3 @@
 pub trait Graphable {
-    fn f(&self, x: f64) -> f64;
+    fn f(&self, x: f64) -> Option<f64>;
 }
